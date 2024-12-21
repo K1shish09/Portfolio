@@ -113,6 +113,78 @@
             max-width: 1200px;
             margin: auto;
         }
+        .about-section {
+    background: #1d2b3a;
+    color: white;
+    padding: 5rem 0;
+    text-align: center;
+    font-family: 'Arial', sans-serif;
+}
+
+.about-section h2 {
+    font-size: 2.5rem;
+    color: #00FFD1;
+    margin-bottom: 2rem;
+}
+
+.about-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 3rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    flex-wrap: wrap;
+}
+
+.about-image {
+    flex: 1;
+    max-width: 300px;
+}
+
+.about-img {
+    border-radius: 50%;
+    width: 100%;
+    height: auto;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease-in-out;
+}
+
+.about-img:hover {
+    transform: scale(1.05);
+}
+
+.about-text {
+    flex: 2;
+    max-width: 600px;
+}
+
+.about-text p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+}
+
+.about-text strong {
+    color: #00FFD1;
+}
+
+.btn-primary {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 1.1rem;
+    background-color: #00FFD1;
+    color: #1d2b3a;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: background-color 0.3s;
+}
+
+.btn-primary:hover {
+    background-color: #008F6A;
+    color: white;
+}
 
         .section {
             margin: 2rem 0;
@@ -178,6 +250,8 @@
             gap: 1.5rem;
             flex-wrap: wrap;
             justify-content: center;
+            margin-top: 50px;
+            margin-left: 80px;
         }
 
         .project {
@@ -320,41 +394,49 @@
     font-size: 1rem;
     color: #ffffff;
 }
+.blog-section {
+    text-align: center;
+    padding: 2rem 0;
+}
 
-    .blog-section {
-        text-align: center;
-        padding: 2rem 0;
-    }
+.blog-post {
+    background: #1d2b3a;
+    color: white;
+    padding: 1.5rem;
+    border-radius: 10px;
+    margin: 1.5rem 0;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s, background-color 0.3s;
+}
 
-    .blogs {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 2rem;
-        justify-content: center;
-    }
+.blog-post:hover {
+    background-color: #16222a;
+    transform: scale(1.05);
+}
 
-    .blog {
-        display: block;
-        text-decoration: none;
-        background: #1d2b3a;
-        color: white;
-        padding: 1.5rem;
-        border-radius: 10px;
-        width: 300px;
-        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
-        transition: transform 0.3s, background-color 0.3s;
-    }
+.blog-post h3 {
+    margin: 0 0 1rem 0;
+    font-size: 1.5rem;
+    color: #00FFD1;
+}
 
-   
-    .blog h3 {
-        margin: 0 0 1rem 0;
-        font-size: 1.5rem;
-    }
+.blog-post p {
+    font-size: 1rem;
+    margin-bottom: 1rem;
+}
 
-    .blog p {
-        font-size: 1rem;
-    }
+.blog-post a {
+    color: #00FFD1;
+    text-decoration: none;
+    font-weight: 600;
+}
 
+.blog-post a:hover {
+    color: #ffffff;
+    text-decoration: underline;
+}
+
+  
         /* Social Media */
         .social-media {
             display: flex;
@@ -418,13 +500,24 @@
         <button onclick="document.querySelector('#projects').scrollIntoView()">Discover More</button>
     </section>
 
-    <div class="container">
-        <section id="about" class="section about">
-            <img src="https://thumbs.dreamstime.com/b/serious-indian-software-developer-tablet-computer-standing-office-software-developer-136788877.jpg" alt="AI Developer">
-            <h2>Prof. Ashish Sharma </h2>
-            <p>I am a dedicated AI developer with expertise in creating cutting-edge AI solutions. Passionate about deep learning, natural language processing, and building intelligent systems that make a difference.</p>
-        </section>
-
+    <section id="about" class="section about-section">
+        <h2>About Me</h2>
+        <div class="about-content">
+            <div class="about-image">
+                <img src="profile-image.jpg" alt="Profile Image" class="about-img">
+            </div>
+            <div class="about-text">
+                <p>
+                    Hi, I'm a passionate AI developer with a strong foundation in machine learning, deep learning, and software engineering. Over the years, I have honed my skills in developing intelligent systems that solve complex problems and improve everyday life. I'm eager to apply my knowledge to create innovative AI applications, and I'm always excited to take on new challenges in this dynamic field.
+                </p>
+                <p>
+                    With expertise in <strong>Python</strong>, <strong>TensorFlow</strong>, <strong>React</strong>, and <strong>MongoDB</strong>, I thrive in environments that encourage collaboration and innovation. I aspire to shape the future of AI through cutting-edge research and impactful projects.
+                </p>
+                <a href="./Web-Developer-Resume.jpg" class="btn-primary" target="_blank">Download CV</a>
+            </div>
+        </div>
+    </section>
+    
         <section id="timeline" class="section timeline">
             <h2>My Journey</h2>
 
@@ -460,50 +553,52 @@
                 </div>
             </div>
         </section>
+       
         <section id="projects" class="section projects">
-            <h2>Highlighted Projects</h2>
-            <div class="projects">
-                <div class="project">
-                    <img src="https://tse2.mm.bing.net/th?id=OIP.LhWK1EUfqziFHyQmKYPYuAHaE8&pid=Api&P=0&h=180" alt="Project 1">
-                    <h3>AI Chat Assistant</h3>
-                    <p>Developed an interactive chatbot using state-of-the-art NLP techniques.</p>
-                </div>
-                <div class="project">
-                    <img src="https://xorance.com/wp-content/uploads/2023/04/AI_Drive_Reasoning-002.png" alt="Project 2">
-                    <h3>Autonomous Navigation System</h3>
-                    <p>Designed AI algorithms for autonomous vehicle navigation and object detection.</p>
-                </div>
-                <div class="project">
-                    <img src="https://bernardmarr.com/img/How%20Is%20AI%20Used%20In%20Healthcare%205%20Powerful%20RealWorld%20Examples%20That%20Show%20The%20Latest%20Advances.png" alt="Project 3">
-                    <h3>Healthcare AI Diagnostics</h3>
-                    <p>Created a real-time diagnostics tool using AI for early disease detection.</p>
-                </div>
-            </div>
-        </section>
+    <h2>Highlighted Projects</h2>
+    <div class="projects">
+        <div class="project">
+            <img src="https://tse2.mm.bing.net/th?id=OIP.LhWK1EUfqziFHyQmKYPYuAHaE8&pid=Api&P=0&h=180" alt="Project 1">
+            <h3>AI Chat Assistant</h3>
+            <p>Developed an interactive chatbot using state-of-the-art NLP techniques.</p>
+        </div>
+        <div class="project">
+            <img src="https://xorance.com/wp-content/uploads/2023/04/AI_Drive_Reasoning-002.png" alt="Project 2">
+            <h3>Autonomous Navigation System</h3>
+            <p>Designed AI algorithms for autonomous vehicle navigation and object detection.</p>
+        </div>
+        <div class="project">
+            <img src="https://bernardmarr.com/img/How%20Is%20AI%20Used%20In%20Healthcare%205%20Powerful%20RealWorld%20Examples%20That%20Show%20The%20Latest%20Advances.png" alt="Project 3">
+            <h3>Healthcare AI Diagnostics</h3>
+            <p>Created a real-time diagnostics tool using AI for early disease detection.</p>
+        </div>
+    </div>
+</section>
 
     
        
-        </section>
-        <section id="blog" class="section">
+        <section id="blog" class="section blog-section">
             <h2>Blog</h2>
             <div class="blogs">
-                <div class="blog">
+                <div class="blog-post">
                     <h3>Latest Trends in AI</h3>
-                    <p>Explore the advancements and innovations shaping the world of artificial intelligence.</p>
+                    <p>Explore the advancements and innovations shaping the world of artificial intelligence. From AI in healthcare to advancements in deep learning, stay up to date with the latest trends in the industry.</p>
                     <a href="https://www.brookings.edu/articles/how-artificial-intelligence-is-transforming-the-world/" target="_blank">Read More</a>
                 </div>
-                <div class="blog">
+                <div class="blog-post">
                     <h3>Machine Learning Basics</h3>
-                    <p>Understand the fundamentals of machine learning and how it powers AI applications.</p>
+                    <p>Understand the fundamentals of machine learning and how it powers AI applications. Learn about supervised and unsupervised learning, and how they contribute to artificial intelligence development.</p>
                     <a href="https://www.brookings.edu/articles/how-artificial-intelligence-is-transforming-the-world/" target="_blank">Read More</a>
                 </div>
-                <div class="blog">
+                <div class="blog-post">
                     <h3>Future of AI in Healthcare</h3>
-                    <p>Discover how AI is revolutionizing the healthcare industry with smart solutions.</p>
+                    <p>Discover how AI is revolutionizing the healthcare industry with smart solutions that aid in early detection, diagnostics, and patient care. AI's impact on the healthcare industry is immense, and the future is bright.</p>
                     <a href="https://example.com/ai-in-healthcare" target="_blank">Read More</a>
                 </div>
             </div>
         </section>
+        
+         
         
         
         <section id="achievements" class="section achievements">
@@ -539,8 +634,36 @@
         
      
  
-     
-    
+        <section id="social-media" class="section">
+            <h2>Connect with Me</h2>
+            <div class="social-media">
+                <a href="https://www.linkedin.com" target="_blank"><i class="fab fa-linkedin"></i></a>
+                <a href="https://github.com" target="_blank"><i class="fab fa-github"></i></a>
+                <a href="https://twitter.com" target="_blank"><i class="fab fa-twitter"></i></a>
+                <a href="https://www.facebook.com" target="_blank"><i class="fab fa-facebook"></i></a>
+            </div>
+        </section>
+        
+        <section id="contact" class="section">
+            <h2>Contact Me</h2>
+            <form action="/submit" method="POST">
+                <label for="name">Name</label>
+                <input type="text" id="name" name="name" required>
+        
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" required>
+        
+                <label for="subject">Subject</label>
+                <input type="text" id="subject" name="subject">
+        
+                <label for="message">Message</label>
+                <textarea id="message" name="message" rows="5" required></textarea>
+        
+                <button type="submit">Send Message</button>
+            </form>
+        </section>
+        
+        
       
         </script>
     </body>
