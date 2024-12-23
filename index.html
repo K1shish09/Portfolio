@@ -108,15 +108,10 @@
             color: #00FFD1;
         }
 
-        .container {
-            padding: 2rem;
-            max-width: 1200px;
-            margin: auto;
-        }
         .about-section {
-    background: #1d2b3a;
+    background: linear-gradient(135deg, #1d2b3a, #16222a);
     color: white;
-    padding: 5rem 0;
+    padding: 4rem 1rem;
     text-align: center;
     font-family: 'Arial', sans-serif;
 }
@@ -127,47 +122,103 @@
     margin-bottom: 2rem;
 }
 
-.about-content {
+.about-container {
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 3rem;
-    max-width: 1200px;
+    max-width: 1000px;
     margin: 0 auto;
-    flex-wrap: wrap;
+    padding: 1rem;
+}
+
+.about-card {
+    display: flex;
+    flex-direction: column;
+    background: #1e2d3d;
+    border-radius: 15px;
+    padding: 2rem;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.about-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
 }
 
 .about-image {
-    flex: 1;
-    max-width: 300px;
+    text-align: center;
+    margin-bottom: 2rem;
 }
 
 .about-img {
+    width: 150px;
+    height: 150px;
     border-radius: 50%;
-    width: 100%;
-    height: auto;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    border: 4px solid #00FFD1;
     transition: transform 0.3s ease-in-out;
 }
 
 .about-img:hover {
-    transform: scale(1.05);
+    transform: scale(1.1);
 }
 
-.about-text {
-    flex: 2;
-    max-width: 600px;
+.about-details {
+    text-align: center;
 }
 
-.about-text p {
+.about-details h3 {
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+    color: #00FFD1;
+}
+
+.about-details p {
     font-size: 1.1rem;
     line-height: 1.6;
     margin-bottom: 1.5rem;
 }
 
-.about-text strong {
+.about-details strong {
     color: #00FFD1;
 }
+
+.btn-primary {
+    display: inline-block;
+    background-color: #00FFD1;
+    color: #1d2b3a;
+    padding: 0.75rem 1.5rem;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.btn-primary:hover {
+    background-color: #ffffff;
+    color: #1d2b3a;
+    transform: scale(1.1);
+}
+
+@media (min-width: 768px) {
+    .about-card {
+        flex-direction: row;
+        align-items: center;
+        gap: 2rem;
+    }
+
+    .about-details {
+        text-align: left;
+    }
+}
+
+        .container {
+            padding: 2rem;
+            max-width: 1200px;
+            margin: auto;
+        }
+      
 
 .btn-primary {
     display: inline-block;
@@ -397,7 +448,15 @@
 }
 .blog-section {
     text-align: center;
-    padding: 6rem 0;
+}
+
+.blogs {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 1000px; /* Adjust as needed */
+    
+    margin: 0 auto; /* Center the container */
 }
 
 .blog-post {
@@ -408,6 +467,7 @@
     margin: 1.5rem 0;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
     transition: transform 0.3s, background-color 0.3s;
+    max-width: 100%; /* Ensure it doesn't exceed container width */
 }
 
 .blog-post:hover {
@@ -437,24 +497,7 @@
     text-decoration: underline;
 }
 
-  
-        /* Social Media */
-        .social-media {
-            display: flex;
-            justify-content: center;
-            margin-top: 2rem;
-        }
 
-        .social-media a {
-            color: #00FFD1;
-            font-size: 2rem;
-            margin: 0 1rem;
-            transition: color 0.3s;
-        }
-
-        .social-media a:hover {
-            color: #ffffff;
-        }
         #contact {
     background: #1d2b3a;
     color: white;
@@ -508,45 +551,6 @@
 }
     
 
-      /* Footer Styling */
-footer {
-    background-color: #f0f9ff; /* Light Blue background */
-    color: #333; /* Dark text for contrast */
-    padding: 3rem 0; /* Vertical padding for spacious look */
-    text-align: center; /* Center the content */
-    font-size: 1rem; /* Standard font size */
-    width: 100%;
-}
-
-footer .footer-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 3rem;
-    margin-bottom: 1rem;
-}
-
-footer .footer-container div {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-footer .footer-container a {
-    color: #00A8FF; /* Soft blue color for links */
-    text-decoration: none;
-    font-weight: bold;
-}
-
-footer .footer-container a:hover {
-    color: #007bb5; /* Slightly darker blue on hover */
-}
-
-footer p {
-    margin-top: 1rem;
-    font-size: 1rem;
-    color: #666; /* Lighter text color for footer content */
-}
 
 /* Responsive Design */
 @media screen and (max-width: 768px) {
@@ -578,24 +582,27 @@ footer p {
         <p>Transforming ideas into innovative AI solutions to create a smarter, connected world.</p>
         <button onclick="document.querySelector('#projects').scrollIntoView()">Discover More</button>
     </section>
-
     <section id="about" class="section about-section">
         <h2>About Me</h2>
-        <div class="about-content">
-            <div class="about-image">
-                <img src="./ai-faces-01.jpg" alt="Profile Image" class="about-img">
-            </div>
-            <div class="about-text">
-                <p>
-                    Hi, I'm a passionate AI developer with a strong foundation in machine learning, deep learning, and software engineering. Over the years, I have honed my skills in developing intelligent systems that solve complex problems and improve everyday life. I'm eager to apply my knowledge to create innovative AI applications, and I'm always excited to take on new challenges in this dynamic field.
-                </p>
-                <p>
-                    With expertise in <strong>Python</strong>, <strong>TensorFlow</strong>, <strong>React</strong>, and <strong>MongoDB</strong>, I thrive in environments that encourage collaboration and innovation. I aspire to shape the future of AI through cutting-edge research and impactful projects.
-                </p>
-                <a href="./Web-Developer-Resume.jpg" class="btn-primary" target="_blank">Download CV</a>
+        <div class="about-container">
+            <div class="about-card">
+                <div class="about-image">
+                    <img src="./ai-faces-01.jpg" alt="Profile Image" class="about-img">
+                </div>
+                <div class="about-details">
+                    <h3>Hi, I'm Richa Scott</h3>
+                    <p>
+                        I'm a passionate AI developer with expertise in machine learning, deep learning, and software engineering. I enjoy creating innovative AI applications that solve real-world problems and improve everyday life.
+                    </p>
+                    <p>
+                        Proficient in <strong>Python</strong>, <strong>TensorFlow</strong>, <strong>React</strong>, and <strong>MongoDB</strong>, I thrive on collaboration and innovation. I'm eager to contribute to impactful projects and shape the future of AI.
+                    </p>
+                    <a href="./Web-Developer-Resume.jpg" class="btn-primary" target="_blank" rel="noopener">Download CV</a>
+                </div>
             </div>
         </div>
     </section>
+    
     
         <section id="timeline" class="section timeline">
             <h2>My Journey</h2>
@@ -661,17 +668,17 @@ footer p {
             <div class="blogs">
                 <div class="blog-post">
                     <h3>Latest Trends in AI</h3>
-                    <p>Explore the advancements and innovations shaping the world of artificial intelligence. From AI in healthcare to advancements in deep learning, stay up to date with the latest trends in the industry.</p>
+                    <p>Explore the advancements and innovations shaping the world of artificial intelligence and boom of it all over with expertise concept and visuals .</p>
                     <a href="https://www.brookings.edu/articles/how-artificial-intelligence-is-transforming-the-world/" target="_blank">Read More</a>
                 </div>
                 <div class="blog-post">
                     <h3>Machine Learning Basics</h3>
-                    <p>Understand the fundamentals of machine learning and how it powers AI applications. Learn about supervised and unsupervised learning, and how they contribute to artificial intelligence development.</p>
+                    <p>Understand the fundamentals of machine learning and how it powers AI applications. Learn about supervised and unsupervised learning.</p>
                     <a href="https://www.brookings.edu/articles/how-artificial-intelligence-is-transforming-the-world/" target="_blank">Read More</a>
                 </div>
                 <div class="blog-post">
                     <h3>Future of AI in Healthcare</h3>
-                    <p>Discover how AI is revolutionizing the healthcare industry with smart solutions that aid in early detection, diagnostics, and patient care. AI's impact on the healthcare industry is immense, and the future is bright.</p>
+                    <p>Discover how AI is revolutionizing the healthcare. AI's impact on the healthcare industry is immense, and the future is bright.</p>
                     <a href="https://example.com/ai-in-healthcare" target="_blank">Read More</a>
                 </div>
             </div>
@@ -724,20 +731,17 @@ footer p {
         <div class="contact-details">
             <ul>
                 <li>
-                    <strong>Email:</strong> <a href="mailto:yourname@example.com">yourname@example.com</a>
+                    <strong>Email:</strong> <a href="mailto:yourname@example.com">richardscott@gmail.com</a>
                 </li>
                 <li>
-                    <strong>Phone:</strong> <a href="tel:+1234567890">+1 (234) 567-890</a>
+                    <strong>Phone:</strong> <a href="tel:+1234567890">+91 9691049424</a>
                 </li>
                 <li>
-                    <strong>Location:</strong> Your City, Country
+                    <strong>Location:</strong> Seminary Hills,Nagpur
                 </li>
-                <li>
-                    <strong>LinkedIn:</strong> <a href="https://linkedin.com/in/yourprofile" target="_blank">linkedin.com/in/yourprofile</a>
-                </li>
-                <li>
-                    <strong>GitHub:</strong> <a href="https://github.com/yourusername" target="_blank">github.com/yourusername</a>
-                </li>
+             <li>
+                <strong> Office:</strong> Mangalwari Complex, Sadar
+             </li>
             </ul>
         </div>
            
